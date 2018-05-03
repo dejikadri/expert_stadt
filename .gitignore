@@ -99,3 +99,8 @@ ENV/
 
 # mypy
 .mypy_cache/
+
+.idea/expert_stadt.iml
+.idea/misc.xml
+.idea/modules.xml
+.idea/workspace.xml
