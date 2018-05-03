@@ -15,7 +15,12 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from rest_framework.urlpatterns import format_suffix_patterns
+from experts import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^expert/', views.ExpertList.as_view()),
 ]
+
+urlpatterns = format_suffix_patterns(urlpatterns)
