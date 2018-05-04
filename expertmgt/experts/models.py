@@ -16,12 +16,16 @@ class Expert(models.Model):
     popularity = models.IntegerField()
     path_to_picture = models.CharField(max_length=150)
     hourly_rate = models.FloatField()
+    deleted = models.PositiveSmallIntegerField(default=1)
     total_hours_taught = models.IntegerField()
     created_date = models.DateTimeField(auto_now_add=True)
     updated_date = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ('popularity',)
 
     def __str__(self):
         """
         Unicode representation of Experts.
         """
-        return "{} {} - ({})".format(self.first_name, self.last_name, self.short_description) 
+        return "{} {} - ({})".format(self.first_name, self.last_name, self.short_description)
